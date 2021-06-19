@@ -12,6 +12,11 @@ public class App{
         p1.criarGrupo("Teste de desc", p1.nome);
         p1.criarGrupo("Teste de desc2", p1.nome);
 
-        System.out.println(Arrays.toString(p1.grupo));
+        for(Grupo element: p1.grupo){
+            System.out.println(element.descricao);
+            System.out.println(element.adm);
+
+        }
+//        System.out.println(Arrays.toString(p1.grupo));
     }      
 }
