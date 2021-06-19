@@ -17,6 +17,5 @@ public class App{
             System.out.println(element.adm);
 
         }
-//        System.out.println(Arrays.toString(p1.grupo));
     }      
 }
