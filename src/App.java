@@ -12,7 +12,7 @@ public class App{
         p1.criarGrupo("Teste de desc", p1.nome);
         p1.criarGrupo("Teste de desc2", p1.nome);
 
-        for(Grupo element: p1.grupo){
+        for(Grupo element: p1.grupos){
             System.out.println(element.descricao);
             System.out.println(element.adm);
 
