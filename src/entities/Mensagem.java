@@ -15,9 +15,9 @@ public class Mensagem {
     String audio;
 }
 
-public class CriacaoMensagem extends MensagemCriacao {
-    Mensagem mensagemCriar() {
-        Mensagem msg = new Mensagem();
-        return msg;
-    }
-}
+// public class CriacaoMensagem extends MensagemCriacao {
+//     Mensagem mensagemCriar() {
+//         Mensagem msg = new Mensagem();
+//         return msg;
+//     }
+// }

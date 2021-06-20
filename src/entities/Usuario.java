@@ -15,9 +15,8 @@ public class Usuario {
     public String telefone;
     public String status;
     public String foto;
+    public ArrayList<Grupo> grupos = new ArrayList<Grupo>();
     //public String adminitrador; -- Decidir depois
-    //public ArrayList<Grupo> grupo = new ArrayList<Grupo>();
-    public ArrayList<Grupo> grupos; //test
 
     public Usuario(String nome, String telefone, String status, String foto){
         this.nome = nome;
@@ -26,13 +25,16 @@ public class Usuario {
         this.foto = foto;
     }
 
-    public void criarGrupo(String descricao, String adm){
+    public Grupo criarGrupo(String descricao, Usuario criadorDoGrupo){
+		String nome = criadorDoGrupo.nome;
+        Grupo g = new Grupo(descricao, nome);
+        this.grupos.add(g);
 
-        Grupo g1 = new Grupo(descricao, adm);
-        this.grupos.add(g1);
+		incluirUsuario(criadorDoGrupo, g);
+		incluirAdm(criadorDoGrupo, g);
+		return g;
     }
-//    public Mensagem criarMensagem(){}
-//    public void incluirUsuario(Usuario user, Grupo grupo){}
+
     public void mensagemCriar () {
 
     }
@@ -41,5 +43,9 @@ public class Usuario {
         u.grupos.add(g);
         g.usuarios.add(u);
     }
+
+	public void incluirAdm(Usuario u, Grupo g){
+		g.arrayAdm.add(u);
+	}
 
 }
