@@ -1,7 +1,7 @@
 package entities;
 
 abstract class MensagemCriacao{
-    protected Mensagem msg;
+    public Mensagem msg;
     abstract Mensagem mensagemCriar();
 
     public void newMensagem(){

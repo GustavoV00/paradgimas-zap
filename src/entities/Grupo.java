@@ -3,7 +3,7 @@ import java.util.*;
 
 
 abstract class GrupoCriacao {
-    protected Grupo crew;
+    public Grupo crew;
     abstract Grupo grupoCriar();
 
     public void newGrupo(){

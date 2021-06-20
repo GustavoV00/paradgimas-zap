@@ -3,7 +3,7 @@ import java.util.*;
 
 // class abstract para a criação de um usuario
 abstract class UsuarioCriacao{
-    protected Usuario user;
+    public Usuario user;
     abstract Usuario criaUsuario();
 
     public void newUsuario() {
