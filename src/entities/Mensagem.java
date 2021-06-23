@@ -1,18 +1,32 @@
 package entities;
 
-abstract class MensagemCriacao{
-    public Mensagem msg;
-    abstract Mensagem mensagemCriar();
+import java.util.Date;
 
-    public void newMensagem(){
-        this.msg = this.mensagemCriar();
-    }
-}
+// abstract class MensagemCriacao{
+//     public Mensagem msg;
+//     abstract Mensagem mensagemCriar();
+// 
+//     public void newMensagem(){
+//         this.msg = this.mensagemCriar();
+//     }
+// }
 public class Mensagem {
-    String textos;
-    String fotos;
-    String videos;
-    String audio;
+	public Usuario autor;
+   	public TipoMensagem tipoMsg;
+	public String corpoMsg;
+   	public Date dataEnvio;
+	public String mensagemGrupo;
+
+	public Mensagem() {}
+	public Mensagem(Usuario autor, TipoMensagem tipoMsg, String corpoMsg, Date dataEnvio, String mensagemGrupo) {
+		this.autor = autor;
+		this.tipoMsg = tipoMsg;
+		this.corpoMsg = corpoMsg;
+		this.dataEnvio = dataEnvio;
+		this.mensagemGrupo = mensagemGrupo;
+	}
+
+
 }
 
 // public class CriacaoMensagem extends MensagemCriacao {

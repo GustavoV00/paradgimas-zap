@@ -1,5 +1,5 @@
 package entities;
-import java.util.*;
+import java.util.ArrayList;
 
 
 abstract class GrupoCriacao {
@@ -35,7 +35,35 @@ public class Grupo {
 			System.out.println(user.nome);
 		}
 
+		System.out.println("Imprimir mensagens do grupo: ");
+		int i = 0;
+		for(Mensagem msg: g.mensagens){
+			System.out.print(i + "-");
+			System.out.print("Autor da mensagem: " +  msg.autor.nome + ", ");
+			System.out.print("Tipo da mensagem: " + msg.tipoMsg + ", ");
+			System.out.print("Mensagem a ser enviada: " + msg.corpoMsg + ", ");
+			System.out.print("Data de envio: " + msg.dataEnvio + " ");
+			System.out.print("Grupo que a mensagem pertence: " + msg.mensagemGrupo + " \n");
+			i += 1;
+		}
+
 		System.out.println();
+	}
+
+	public void excluirMensagem(Usuario u, Grupo g){
+		Mensagem msgAux = u.mensagens.get(0);
+		for(Mensagem msg: u.mensagens){
+			if(msg.mensagemGrupo == g.descricao){
+				msgAux = msg;
+				
+			} 
+		}
+
+		if(msgAux.mensagemGrupo == g.descricao){
+			g.mensagens.remove(msgAux);
+			u.mensagens.remove(msgAux);
+		}
+		System.out.println("MENSAGEM QUE VAI SER EXCLUIDA: " + msgAux.corpoMsg);
 	}
 }
 
