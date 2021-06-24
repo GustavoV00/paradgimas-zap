@@ -3,14 +3,12 @@ import java.util.ArrayList;
 
 public class Grupo {
     public String descricao;
-    public String adm;
     public ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
     public ArrayList<Mensagem> mensagens = new ArrayList<Mensagem>();
     public ArrayList<Usuario> arrayAdm = new ArrayList<Usuario>();
 
-    public Grupo(String descricao, String adm){
+    public Grupo(String descricao){
         this.descricao = descricao;
-        this.adm = adm;
     }
 	// Imprimi a descrição, usuário, administradores e todas as mensagens
 	public void imprimirInformacoesGrupo(Grupo g){
@@ -27,7 +25,7 @@ public class Grupo {
 			System.out.println(user.nome);
 		}
 
-		System.out.println("Imprimir mensagens do grupo: ");
+		System.out.println("\nMensagens do grupo: ");
 		int i = 0;
 		for(Mensagem msg: g.mensagens){
 			System.out.print(i + "-");
@@ -61,8 +59,12 @@ public class Grupo {
 		if(msgAux.mensagemGrupo == g.descricao){
 			g.mensagens.remove(msgAux);
 			u.mensagens.remove(msgAux);
+
+			System.out.println("MENSAGEM QUE FOI EXCLUIDA: " + msgAux.corpoMsg);
+			System.out.println("Usuario que enviou a mensagem: " + u.nome);
+			System.out.println("Grupo que o usuário enviou a mensagem: "+ g.descricao);
+			System.out.println();
 		}
-		System.out.println("MENSAGEM QUE VAI SER EXCLUIDA: " + msgAux.corpoMsg);
 	}
 }
 

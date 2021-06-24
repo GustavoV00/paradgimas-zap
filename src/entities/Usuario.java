@@ -17,9 +17,7 @@ public class Usuario {
     }
 	// Cria grupo, e ao criar, inclui o usuário que criou o grupo como adiministrador
     public Grupo criarGrupo(String descricao, Usuario criadorDoGrupo){
-		String nome = criadorDoGrupo.nome;
-        Grupo g = new Grupo(descricao, nome);
-        this.grupos.add(g);
+        Grupo g = new Grupo(descricao);
 
 		incluirUsuario(criadorDoGrupo, g);
 		incluirAdm(criadorDoGrupo, g);
@@ -46,6 +44,7 @@ public class Usuario {
 
 	// Método para imprimir a informação dos usuários 
 	public void imprimirInformacoesUsuarios(Usuario u){
+		System.out.println();
 		System.out.println("Nome: " + u.nome);
 		System.out.println("Telefone: " + u.telefone);
 		System.out.println("Status: " + u.status);
@@ -53,17 +52,23 @@ public class Usuario {
 
 		int i = 0;
 		// Imprime a descrição de cada grupo que o usuário pertence
+		System.out.print("Grupos que o usario faz parte: ");
+		System.out.print("{ ");
 		for(Grupo grupo: u.grupos){
-			System.out.println(i + "-" + grupo.descricao);
+			System.out.print(u.nome + "-" + grupo.descricao + ", ");
 			i += 1;
 		}
+		System.out.println("}");
 
 		i = 0;
 		// Imprime todas as mensagens que vão ser enviadas aos grupos.
+		System.out.print("Mensagens que o usário enviou: ");
+		System.out.print("{ ");
 		for(Mensagem msg: u.mensagens){
-			System.out.println(i + "-" + msg.corpoMsg);
+			System.out.print("\"" + msg.corpoMsg+ "\"" + ", ");
 			i += 1;
 		}
+		System.out.print("}");
 
 		System.out.println();
 	}

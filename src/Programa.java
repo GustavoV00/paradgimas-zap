@@ -1,6 +1,8 @@
-import entities.*;
+import entities.Grupo;
+import entities.TipoMensagem;
+import entities.Usuario;
 
-public class App{
+public class Programa{
     public static void main(String[] args){
 		// Cria uma instância de usuário, com dados aleatórios.
         Usuario p1 = new Usuario("p1", "41-99999999", "online", "foto1");
@@ -35,16 +37,20 @@ public class App{
 
 		// Testes do metodo excluirMensagem
 		g1.excluirMensagem(p2, g1);
-		g1.excluirMensagem(p1, g1);
 
 		// Imprime as informações dos usuários
 		p1.imprimirInformacoesUsuarios(p1);
+		System.out.println("\n-------------------------------------------------\n");
 		p1.imprimirInformacoesUsuarios(p2);
+		System.out.println("\n-------------------------------------------------\n");
 		p1.imprimirInformacoesUsuarios(p3);
+		System.out.println("\n-------------------------------------------------\n");
 		p1.imprimirInformacoesUsuarios(p4);
-		System.out.println("-------------------------------------------------");
+		System.out.println("\n-------------------------------------------------\n");
 		g1.imprimirInformacoesGrupo(g1);
+		System.out.println("\n-------------------------------------------------\n");
 		g2.imprimirInformacoesGrupo(g2);
+		System.out.println("\n-------------------------------------------------\n");
 		g3.imprimirInformacoesGrupo(g3);
 	 }
 }
