@@ -65,7 +65,7 @@ public class Usuario {
 		System.out.print("Mensagens que o usário enviou: ");
 		System.out.print("{ ");
 		for(Mensagem msg: u.mensagens){
-			System.out.print("\"" + msg.corpoMsg+ "\"" + ", ");
+			System.out.print("\"" + msg.corpoMsg+ "'" + ", ");
 			i += 1;
 		}
 		System.out.print("}");

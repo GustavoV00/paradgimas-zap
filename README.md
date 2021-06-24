@@ -36,4 +36,4 @@ Comportamento do trabalho:
 
 Simulação:
 	-> O trabalho foi testado de acordo com a simulação indicada na descrição do trabalho.
-	-> Além dos testes oferecidos na descrição do trabalho, foi adicionado duas exclusões como exemplo.
+	-> Além dos testes oferecidos na descrição do trabalho, foi adicionado uma exclusões como exemplo.
