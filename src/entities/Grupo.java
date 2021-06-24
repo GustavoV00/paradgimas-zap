@@ -1,15 +1,6 @@
 package entities;
 import java.util.ArrayList;
 
-
-abstract class GrupoCriacao {
-    public Grupo crew;
-    abstract Grupo grupoCriar();
-
-    public void newGrupo(){
-        this.crew = this.grupoCriar();
-    }
-}
 public class Grupo {
     public String descricao;
     public String adm;

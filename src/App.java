@@ -8,7 +8,6 @@ public class App{
         Usuario p3 = new Usuario("p3", "41-77777777", "online", "foto3");
         Usuario p4 = new Usuario("p4", "41-66666666", "ocupado", "foto4");
 
-
 		// p1 cria o grupo g1 e g2
 		// p3 cria o grupo g3
         Grupo g1 = p1.criarGrupo("g1", p1);
@@ -17,8 +16,8 @@ public class App{
 
 		// p1 inclui os usuarios p2, p3 e p4 no grupo g1 (p1 adm do g1)
 		p1.incluirUsuario(p2, g1);
-        p1.incluirUsuario(p3, g1);
-        p1.incluirUsuario(p4, g1);
+		p1.incluirUsuario(p3, g1);
+		p1.incluirUsuario(p4, g1);
 
 		// p1 inclui a p2 e o p3 no grupo g2 (p1 adm do g2)
 		p1.incluirUsuario(p2, g2);
@@ -26,8 +25,6 @@ public class App{
 
 		// p3 inclui a p4 no grupo g3 (p3 adm do g3)
 		p3.incluirUsuario(p4, g3);
-
-		
 
 		p2.enviarMensagem(g1, "Enviar esta mensagem 1", TipoMensagem.TEXTO, p2);// p2 envia mensagem no g1;
 		p1.enviarMensagem(g1, "Enviar esta mensagem 2", TipoMensagem.TEXTO, p1);// p1 envia mensagem no g1;
