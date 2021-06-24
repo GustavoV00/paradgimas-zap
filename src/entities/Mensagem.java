@@ -2,14 +2,6 @@ package entities;
 
 import java.util.Date;
 
-// abstract class MensagemCriacao{
-//     public Mensagem msg;
-//     abstract Mensagem mensagemCriar();
-// 
-//     public void newMensagem(){
-//         this.msg = this.mensagemCriar();
-//     }
-// }
 public class Mensagem {
 	public Usuario autor;
    	public TipoMensagem tipoMsg;
@@ -25,13 +17,5 @@ public class Mensagem {
 		this.dataEnvio = dataEnvio;
 		this.mensagemGrupo = mensagemGrupo;
 	}
-
-
 }
 
-// public class CriacaoMensagem extends MensagemCriacao {
-//     Mensagem mensagemCriar() {
-//         Mensagem msg = new Mensagem();
-//         return msg;
-//     }
-// }

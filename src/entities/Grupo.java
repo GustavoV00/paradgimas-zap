@@ -21,7 +21,7 @@ public class Grupo {
         this.descricao = descricao;
         this.adm = adm;
     }
-
+	// Imprimi a descrição, usuário, administradores e todas as mensagens
 	public void imprimirInformacoesGrupo(Grupo g){
 		System.out.println("Grupo: " + g.descricao);
 		int indice = 0;
@@ -30,6 +30,7 @@ public class Grupo {
 			indice += 1;
 		}
 
+		// Apesar de em nossa implementação ter apenas um adm por grupo, se no futuro houver mais de um, será impresso todos
 		System.out.println("\nAdministrador do grupo: " + g.descricao);
 		for(Usuario user : g.arrayAdm){
 			System.out.println(user.nome);
@@ -50,8 +51,12 @@ public class Grupo {
 		System.out.println();
 	}
 
+	// Esse metodo vai excluir a ultima mensagem, enviada pelo usuário no grupo g
 	public void excluirMensagem(Usuario u, Grupo g){
+		// Criar uma instância, de uma mensagem que tem na lista de usuários
 		Mensagem msgAux = u.mensagens.get(0);
+		// Percorre todas as mensagens, que o usuario enviou em todos os grupos
+		// E encontra a ultima mensagem, que o usuario enviou ao grupo. 
 		for(Mensagem msg: u.mensagens){
 			if(msg.mensagemGrupo == g.descricao){
 				msgAux = msg;
@@ -59,6 +64,9 @@ public class Grupo {
 			} 
 		}
 
+		// Após encontrar a mensagem, faz uma verificação final, se a mensagem
+		// está no grupo certo. Após isso, exclui a mensagem, tanto do grupo,
+		// quanto das mensagens enviadas pelo usuario.
 		if(msgAux.mensagemGrupo == g.descricao){
 			g.mensagens.remove(msgAux);
 			u.mensagens.remove(msgAux);
@@ -67,12 +75,3 @@ public class Grupo {
 	}
 }
 
-// public class CriacaoGrupo extends GrupoCriacao {
-//     Grupo grupoCriar() {
-//         Grupo crew = new Grupo();
-//         crew.usuarios = new ArrayList<Usuario>();
-//         crew.mensagens = new ArrayList<Mensagem>();
-// 
-//         return crew;
-//     }
-// } 
